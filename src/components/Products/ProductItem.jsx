@@ -1,6 +1,7 @@
 import "./ProductItem.css";
+import ProductInfo from "./ProductInfo";
 
-function ProductItem({ product }) {
+const ProductItem = ({ product }) => {
   const { imageUrl, productName, productPrice } = product;
 
   return (
@@ -8,12 +9,14 @@ function ProductItem({ product }) {
       <div className="product-image">
         <img src={imageUrl} alt="" />
       </div>
-      <div className="product-info">
+      <ProductInfo>
         <h2>{productName}</h2>
         <span>{productPrice}₺</span>
-      </div>
+        <br />
+        <button>Add to Card</button>
+      </ProductInfo>
     </div>
   );
-}
+};
 
 export default ProductItem;
